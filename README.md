@@ -11,5 +11,5 @@
 <li>GSon: Convertirá el&nbsp;<em>Json&nbsp;</em>en un modelo de datos fácil para poder trabajar con él.</li>
 <li>Anko: Ya lo hemos usado varias veces, lo usaremos para simplificar la práctica lo máximo posible.</li>
 <li>CardView: Es un componente de Android, que nos permite crear una especie de tarjetas que visualmente quedan muy bien, será el contenedor de nuestras imágenes.</li>
-<a rel="noopener noreferrer" target="_blank" href="https://balsamiq.cloud/sser0fm/pg6tywp/rA7D7" href="https://cursokotlin.com/capitulo-20-consumiento-apis-retrofit-2/" >Referencia</a>
+<a rel="noopener noreferrer" target="_blank" href="https://cursokotlin.com/capitulo-20-consumiento-apis-retrofit-2/" >Referencia</a>
 </ul>
