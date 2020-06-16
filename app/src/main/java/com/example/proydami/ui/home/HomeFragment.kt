@@ -20,11 +20,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
 
-    var carouselImages = intArrayOf(
-        R.drawable.img1,
-        R.drawable.img2,
-        R.drawable.img3
-    )
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,19 +33,32 @@ class HomeFragment : Fragment() {
 
 
         homeViewModel.text.observe(this, Observer {
-            val carouselView = view?.findViewById(carousel) as? CarouselView;
-            carouselView?.setPageCount(carouselImages.size);
-            carouselView?.setImageListener(imageListener);
+            setCarousel()
         })
         return root
     }
 
-    var imageListener: ImageListener = object : ImageListener {
-        override fun setImageForPosition(position: Int, imageView: ImageView) {
-            // You can use Glide or Picasso here
-            imageView.setImageResource(carouselImages[position])
+
+
+    fun setCarousel(){
+        var carouselImages = intArrayOf(
+            R.drawable.img1,
+            R.drawable.img2,
+            R.drawable.img3
+        )
+        var imageListener: ImageListener = object : ImageListener {
+            override fun setImageForPosition(position: Int, imageView: ImageView) {
+                // You can use Glide or Picasso here
+                imageView.setImageResource(carouselImages[position])
+            }
         }
+        val carouselView = view?.findViewById(carousel) as? CarouselView;
+        carouselView?.setImageListener(imageListener);
+        carouselView?.setPageCount(carouselImages.size);
+
+
     }
+
 
 
 }
