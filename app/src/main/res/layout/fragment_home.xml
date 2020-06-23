@@ -18,7 +18,7 @@
     </com.synnapps.carouselview.CarouselView>
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/form"
         android:layout_width="match_parent"
         android:layout_height="531dp"
         android:layout_below="@+id/carousel"

@@ -1,5 +1,6 @@
 package com.example.proydami.ui.contactus
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.InflateException
 import android.view.LayoutInflater
@@ -55,15 +56,19 @@ class ContactusFragment : Fragment() {
                 toast.show()
             }
 
-        //contactusViewModel = ViewModelProviders.of(this).get(ContactusViewModel::class.java)
+        contactusViewModel = ViewModelProviders.of(this).get(ContactusViewModel::class.java)
 
         var mapFragment = fragmentManager?.findFragmentById(R.id.contactMap) as SupportMapFragment?
-        //mapFragment?.getMapAsync(this)
 
         mapFragment?.getMapAsync {
-                googleMap -> mMap = googleMap
-            mapReady = true
-            setValuesonMapReady()
+                googleMap ->
+            //mMap = googleMap
+            //mapReady = true
+            val sydney = LatLng(-34.0, 151.0)
+            googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
+            googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+
+            //setValuesonMapReady()
         }
 
         //contactusViewModel.text.observe(this, Observer {
@@ -78,11 +83,13 @@ class ContactusFragment : Fragment() {
     fun setValuesonMapReady() {
         //mMap = gm
 
+        println(mMap)
         // Add a marker in Sydney and move the camera
         val sydney = LatLng(-34.0, 151.0)
         mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
     }
+
 
 //    override fun onMapReady(gm: GoogleMap) {
 //        mMap = gm

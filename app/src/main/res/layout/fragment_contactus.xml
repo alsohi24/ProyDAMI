@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <com.google.android.gms.maps.MapView
@@ -14,28 +14,112 @@
         android:layout_weight="0.5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
 
-        <FrameLayout
+        <fragment
             android:id="@+id/contactMap"
             android:name="com.google.android.gms.maps.MapFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:translationZ="1dp"
             tools:context=".MapsActivity" />
+
+<!--            android:background="[some non-transparent color]"-->
+
 
     </com.google.android.gms.maps.MapView>
 
-    <com.google.android.material.textfield.TextInputLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="0.5">
+        android:layout_marginTop="-30dp"
+        android:layout_weight="0.5"
+        android:paddingTop="30dp">
 
-        <com.google.android.material.textfield.TextInputEditText
+<!--        <View-->
+<!--            android:id="@+id/form"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="0dp"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:layout_marginBottom="40dp"-->
+<!--            android:background="@drawable/shadow_form"-->
+<!--            android:translationZ="2dp"-->
+<!--            android:translationY="-30dp"-->
+<!--            android:elevation="5dp"/>-->
+
+        <RelativeLayout
+            android:id="@+id/formlay"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="hint" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/shadow_form"
+            android:elevation="5dp"
+            android:translationY="-30dp"
+            android:translationZ="2dp" >
 
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="6dp"
+                android:text="Enviar" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/button"
+                android:id="@+id/lblmsg"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="6dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Mensaje" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/lblmsg"
+                android:id="@+id/lblemail"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="6dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Correo" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/lblemail"
+                android:id="@+id/lblnombre"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="6dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre Completo" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
 
 </LinearLayout>
