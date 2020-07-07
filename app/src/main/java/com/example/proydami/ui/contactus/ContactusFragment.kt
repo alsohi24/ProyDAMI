@@ -2,10 +2,7 @@ package com.example.proydami.ui.contactus
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.InflateException
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.get
@@ -52,8 +49,10 @@ class ContactusFragment : Fragment() {
             try {
                 root = inflater.inflate(R.layout.fragment_contactus, container, false)
             } catch (e: InflateException) {
-                val toast = Toast.makeText(activity, e.message, Toast.LENGTH_LONG)
-                toast.show()
+//                val toast = Toast.makeText(activity, e.message, Toast.LENGTH_LONG)
+//                toast.show()
+                root = null
+                root = inflater.inflate(R.layout.fragment_contactus, container, false)
             }
 
         contactusViewModel = ViewModelProviders.of(this).get(ContactusViewModel::class.java)
