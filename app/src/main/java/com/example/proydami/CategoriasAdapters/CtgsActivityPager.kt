@@ -1,4 +1,4 @@
-package com.example.proydami.Adapters
+package com.example.proydami.CategoriasAdapters
 
 import android.os.Bundle
 import android.os.PersistableBundle

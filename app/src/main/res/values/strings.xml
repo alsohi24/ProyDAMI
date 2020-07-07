@@ -3,4 +3,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_contactus">Contact Us</string>
+
+    <string name="title_card">Paracetamol</string>
+    <string name="price_card" > 42 so</string>
 </resources>

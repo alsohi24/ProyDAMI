@@ -1,11 +1,10 @@
-package com.example.proydami.Adapters
+package com.example.proydami.CategoriasAdapters
 
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proydami.R
-import kotlinx.android.synthetic.main.item_ctg.view.*
 
 class CtgsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
