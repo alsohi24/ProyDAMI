@@ -1,6 +1,7 @@
 package com.example.proydami.ui.dashboard
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.proydami.Models.Producto
+import com.example.proydami.ProductosAdapters.PrdDetailActivity
 import com.example.proydami.ProductosAdapters.PrdsAdapter
 import com.example.proydami.R
 import kotlinx.android.synthetic.main.fragment_dashboard.*
@@ -43,20 +45,21 @@ class DashboardFragment : Fragment() {
         lstPrds.add(Producto(0,"Gasas","",224.0))
 
 
-
         //val textView: TextView = root.findViewById(R.id.text_dashboard)
         dashboardViewModel.text.observe(this, Observer {
-            //textView.text = it
-//            cardProd.setOnLongClickListener {
-//                cardProd.setChecked(!cardProd.isChecked)
-//                true
-//            }
+
             rvPrds.layoutManager = GridLayoutManager(context,2)
 
-            //rvPrds.layoutManager =  LinearLayoutManager( context)
-            rvPrds.adapter = PrdsAdapter(lstPrds)
+            rvPrds.adapter = PrdsAdapter(lstPrds,{
+                val intentDeatilCard = Intent(context, PrdDetailActivity::class.java)
+                intentDeatilCard.putExtra("PRDs", it)
+
+                startActivity(intentDeatilCard)
+            })
 
         })
+
+
         return root
     }
 }

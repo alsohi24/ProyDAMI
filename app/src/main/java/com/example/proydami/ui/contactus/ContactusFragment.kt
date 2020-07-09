@@ -41,31 +41,49 @@ class ContactusFragment : Fragment() {
     ): View? {
 
 
-            if (root != null) {
-                var parent:ViewGroup = root?.getParent() as ViewGroup;
-                if (parent != null)
-                    parent.removeView(root);
-            }
             try {
                 root = inflater.inflate(R.layout.fragment_contactus, container, false)
             } catch (e: InflateException) {
 //                val toast = Toast.makeText(activity, e.message, Toast.LENGTH_LONG)
 //                toast.show()
-                root = null
-                root = inflater.inflate(R.layout.fragment_contactus, container, false)
+                println(e.message)
             }
 
         contactusViewModel = ViewModelProviders.of(this).get(ContactusViewModel::class.java)
 
         var mapFragment = fragmentManager?.findFragmentById(R.id.contactMap) as SupportMapFragment?
 
+
+//        root?.mapView2?.getMapAsync{
+//                googleMap ->
+//            googleMap.apply {
+//                val sydney = LatLng(22.0, 45.0)
+//                addMarker(
+//                    MarkerOptions()
+//                        .position(sydney)
+//                        .title("Marker in Sydney")
+//                )
+//                moveCamera(CameraUpdateFactory.newLatLng(sydney))
+//            }
+//        }
         mapFragment?.getMapAsync {
                 googleMap ->
-            //mMap = googleMap
+            googleMap.apply {
+                val sydney = LatLng(22.0, 45.0)
+                addMarker(
+                    MarkerOptions()
+                        .position(sydney)
+                        .title("Marker in Sydney")
+                )
+                moveCamera(CameraUpdateFactory.newLatLng(sydney))
+            }
             //mapReady = true
-            val sydney = LatLng(-34.0, 151.0)
-            googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-            googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+//            if (googleMap !=null) {
+//                val sydney = LatLng(22.0, 45.0)
+//                googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
+//                googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+//            }
+
             //googleMap.re
             //setValuesonMapReady()
         }
