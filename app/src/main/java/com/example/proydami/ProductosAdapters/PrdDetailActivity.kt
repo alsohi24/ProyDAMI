@@ -18,7 +18,7 @@ class PrdDetailActivity : AppCompatActivity() {
             val p = extras["PRDs"] as? Producto
 
             tvPrice.text = p?.precio.toString()
-            tvName.text = p?.title
+            tvName.text = p?.nombre
 
         }
     }

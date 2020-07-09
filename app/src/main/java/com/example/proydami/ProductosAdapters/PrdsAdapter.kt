@@ -21,7 +21,7 @@ class PrdsAdapter (private val prdList: List<Producto>,
         val prd = prdList[position]
 
         holder.lblimage.setImageResource(R.drawable.img1)
-        holder.lblnameprod.text = prd.title
+        holder.lblnameprod.text = prd.nombre
         holder.lblprice.text = prd.precio.toString()
         holder.itemView.setOnClickListener{
             showDetail(prd)
