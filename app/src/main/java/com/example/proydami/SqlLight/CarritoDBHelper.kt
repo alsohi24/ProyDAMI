@@ -21,7 +21,8 @@ class CarritoDBHelper (context: Context):
             "${Columns.CartBC._CODIGO} integer primary key," +
             "${Columns.CartBC._NOMBRE} text," +
             "${Columns.CartBC._DESC} text," +
-            "${Columns.CartBC._PRECIO} real)"
+            "${Columns.CartBC._PRECIO} real" +
+            "${Columns.CartBC._CANTIDAD} integer)"
 
     private val sql_eliminar_tb_cart = "DROP TABLE IF EXIST ${Columns.CartBC._TABLA}"
 }

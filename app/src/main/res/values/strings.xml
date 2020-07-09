@@ -6,4 +6,7 @@
 
     <string name="title_card">Paracetamol</string>
     <string name="price_card"> 42 so</string>
+
+
+    <string name="carrito" >Carrito</string>
 </resources>

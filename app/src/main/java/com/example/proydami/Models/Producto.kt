@@ -6,4 +6,5 @@ class Producto(
     var id: Int? = 0,
     var nombre: String? = null,
     var desc: String? = null,
-    var precio: Double? = 0.0) : Serializable
+    var precio: Double? = 0.0,
+    var cantidad: Int? = 0) : Serializable

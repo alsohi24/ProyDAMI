@@ -11,7 +11,7 @@ class Columns {
         const val _NOMBRE = "nombre"
         const val _DESC = "desc"
         const val _PRECIO = "precio"
-
+        const val _CANTIDAD = "cantidad"
     }
 }
 

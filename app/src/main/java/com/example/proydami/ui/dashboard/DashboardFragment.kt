@@ -31,26 +31,12 @@ class DashboardFragment : Fragment() {
             ViewModelProviders.of(this).get(DashboardViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
 
-        val lstPrds = ArrayList<Producto>()
-        lstPrds.add(Producto(0,"Parecetamol","",34.0))
-        lstPrds.add(Producto(0,"Suplementos","",12.0))
-        lstPrds.add(Producto(0,"Complementos","",23.0))
-        lstPrds.add(Producto(0,"A1 Pastillas","",324.0))
-        lstPrds.add(Producto(0,"Blue Pills","",23.0))
-        lstPrds.add(Producto(0,"Curitas","",23.0))
-        lstPrds.add(Producto(0,"Jeringas","",12.0))
-        lstPrds.add(Producto(0,"Jaraba","",57.0))
-        lstPrds.add(Producto(0,"Miel","",45.0))
-        lstPrds.add(Producto(0,"Pomada","",343.0))
-        lstPrds.add(Producto(0,"Gasas","",224.0))
-
-
         //val textView: TextView = root.findViewById(R.id.text_dashboard)
         dashboardViewModel.text.observe(this, Observer {
 
             rvPrds.layoutManager = GridLayoutManager(context,2)
 
-            rvPrds.adapter = PrdsAdapter(lstPrds,{
+            rvPrds.adapter = PrdsAdapter(getPrds(),{
                 val intentDeatilCard = Intent(context, PrdDetailActivity::class.java)
                 intentDeatilCard.putExtra("PRDs", it)
 
@@ -58,8 +44,26 @@ class DashboardFragment : Fragment() {
             })
 
         })
-
-
         return root
     }
+
+    fun getPrds() :  ArrayList<Producto>{
+        val lstPrds = ArrayList<Producto>()
+        lstPrds.add(Producto(0,"Parecetamol","",34.0, cantidad = 21))
+        lstPrds.add(Producto(0,"Suplementos","",12.0, cantidad = 88))
+        lstPrds.add(Producto(0,"Complementos","",23.0, cantidad = 45))
+        lstPrds.add(Producto(0,"A1 Pastillas","",324.0, cantidad = 56))
+        lstPrds.add(Producto(0,"Blue Pills","",23.0, cantidad = 76))
+        lstPrds.add(Producto(0,"Curitas","",23.0, cantidad = 23))
+        lstPrds.add(Producto(0,"Jeringas","",12.0, cantidad = 34))
+        lstPrds.add(Producto(0,"Jaraba","",57.0, cantidad = 54))
+        lstPrds.add(Producto(0,"Miel","",45.0, cantidad = 12))
+        lstPrds.add(Producto(0,"Pomada","",343.0, cantidad = 23))
+        lstPrds.add(Producto(0,"Gasas","",224.0, cantidad = 45))
+
+        return lstPrds
+
+    }
 }
+
+
