@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.proydami.CarritoActivity
 import com.example.proydami.Models.Producto
 import com.example.proydami.ProductosAdapters.PrdDetailActivity
 import com.example.proydami.ProductosAdapters.PrdsAdapter
@@ -41,25 +42,34 @@ class DashboardFragment : Fragment() {
                 intentDeatilCard.putExtra("PRDs", it)
 
                 startActivity(intentDeatilCard)
-            })
+            }, "grid")
+
+            cart.setOnClickListener{
+                val intentCarr = Intent(context, CarritoActivity::class.java)
+                //intentCarr.putExtra("PRDs", it)
+
+                startActivity(intentCarr)
+            }
 
         })
+
+
         return root
     }
 
     fun getPrds() :  ArrayList<Producto>{
         val lstPrds = ArrayList<Producto>()
-        lstPrds.add(Producto(0,"Parecetamol","",34.0, cantidad = 21))
-        lstPrds.add(Producto(0,"Suplementos","",12.0, cantidad = 88))
-        lstPrds.add(Producto(0,"Complementos","",23.0, cantidad = 45))
-        lstPrds.add(Producto(0,"A1 Pastillas","",324.0, cantidad = 56))
-        lstPrds.add(Producto(0,"Blue Pills","",23.0, cantidad = 76))
-        lstPrds.add(Producto(0,"Curitas","",23.0, cantidad = 23))
-        lstPrds.add(Producto(0,"Jeringas","",12.0, cantidad = 34))
-        lstPrds.add(Producto(0,"Jaraba","",57.0, cantidad = 54))
-        lstPrds.add(Producto(0,"Miel","",45.0, cantidad = 12))
-        lstPrds.add(Producto(0,"Pomada","",343.0, cantidad = 23))
-        lstPrds.add(Producto(0,"Gasas","",224.0, cantidad = 45))
+        lstPrds.add(Producto(0,"Parecetamol","",34.0, 21))
+        lstPrds.add(Producto(2,"Suplementos","",12.0, 88))
+        lstPrds.add(Producto(3,"Complementos","",23.0, cantidad = 45))
+        lstPrds.add(Producto(4,"A1 Pastillas","",324.0, cantidad = 56))
+        lstPrds.add(Producto(5,"Blue Pills","",23.0, cantidad = 76))
+        lstPrds.add(Producto(6,"Curitas","",23.0, cantidad = 23))
+        lstPrds.add(Producto(7,"Jeringas","",12.0, cantidad = 34))
+        lstPrds.add(Producto(8,"Jaraba","",57.0, cantidad = 54))
+        lstPrds.add(Producto(9,"Miel","",45.0, cantidad = 12))
+        lstPrds.add(Producto(10,"Pomada","",343.0, cantidad = 23))
+        lstPrds.add(Producto(11,"Gasas","",224.0, cantidad = 45))
 
         return lstPrds
 

@@ -24,7 +24,7 @@ class PrdDetailActivity : AppCompatActivity() {
         val extras = intent.extras
 
         if (extras != null){
-             val p = extras["PRDs"] as? Producto
+             p = extras["PRDs"] as? Producto
 
             tvPrice.text = p?.precio.toString()
             tvName.text = p?.nombre
@@ -43,6 +43,7 @@ class PrdDetailActivity : AppCompatActivity() {
             put(Columns.CartBC._CODIGO, p?.id )
             put(Columns.CartBC._NOMBRE, p?.nombre)
             put(Columns.CartBC._PRECIO, p?.precio)
+            put(Columns.CartBC._CANTIDAD, p?.cantidad)
             put(Columns.CartBC._DESC, p?.desc)
         }
 

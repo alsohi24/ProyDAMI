@@ -7,9 +7,20 @@ import com.example.proydami.Models.Producto
 import com.example.proydami.R
 
 class PrdsAdapter (private val prdList: List<Producto>,
-                   val showDetail: (Producto) -> Unit ) : RecyclerView.Adapter<PrdsViewHolder>() {
+                   val showDetail: (Producto) -> Unit,
+                   val tipo: String) : RecyclerView.Adapter<PrdsViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PrdsViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.card_prod, parent, false)
+
+        var lay = R.layout.card_prod
+
+        if(tipo == "list"){
+            lay = R.layout.item_prod
+        }else{
+            lay = R.layout.card_prod
+        }
+
+        val view = LayoutInflater.from(parent.context).inflate(lay, parent, false)
         return PrdsViewHolder(view)
     }
 
