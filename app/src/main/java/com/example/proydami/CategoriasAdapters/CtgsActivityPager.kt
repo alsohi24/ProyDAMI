@@ -11,7 +11,7 @@ class CtgsActivityPager :  AppCompatActivity(){
         super.onCreate(savedInstanceState, persistentState)
         setContentView(R.layout.item_ctg)
 
-        //var textvw = findViewById<View>(R.id.)
+        //var textvw = findViewById<View>(R.id.) /
 
     }
 
