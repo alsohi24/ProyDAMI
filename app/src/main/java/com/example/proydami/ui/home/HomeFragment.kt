@@ -47,7 +47,7 @@ class HomeFragment : Fragment() {
                 override fun onPageScrollStateChanged(state: Int) {}override fun onPageSelected(position: Int) {}override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
 
 //                    argbEvaluator = ArgbEvaluator().evaluate(positionOffset,
-//                        colors[position],
+//                        colors[position],3
 //                        colors[position + 1]) as ArgbEvaluator
                     println("colors.size : "+ colors.size )
                     println("colors "+ colors[position])
