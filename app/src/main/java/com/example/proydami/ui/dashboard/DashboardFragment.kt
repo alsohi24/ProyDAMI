@@ -58,6 +58,8 @@ class DashboardFragment : Fragment() {
     }
 
     fun getPrds() :  ArrayList<Producto>{
+
+        //Volley
         val lstPrds = ArrayList<Producto>()
         lstPrds.add(Producto(0,"Parecetamol","",34.0, 21))
         lstPrds.add(Producto(2,"Suplementos","",12.0, 88))

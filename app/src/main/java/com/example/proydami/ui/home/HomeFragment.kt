@@ -73,6 +73,7 @@ class HomeFragment : Fragment() {
     fun getListCtgs(): ArrayList<Categoria> {
 
         val lc: ArrayList<Categoria> = ArrayList()
+        //Volley
         lc.add(Categoria(R.drawable.brochure,
                     "Brochure",
                    "Brochure is an informative paper document (often also used for advertising) that can be folded into a template"))
